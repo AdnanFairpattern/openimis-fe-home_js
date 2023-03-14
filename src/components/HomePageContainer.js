@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { Contributions, useUserQuery } from "@openimis/fe-core";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import LinkBox from "./LinkBox";
 import ReportBox from "./ReportBox";
@@ -26,6 +26,16 @@ const container = {marginTop:"10px"}
 
 const HomePageContainer = (props) => {
 
+   // function myFunction() {
+   //    document.getElementById("demo").innerHTML = "Window width: " + window.innerWidth + "<br>Window height: " + window.innerHeight;
+   // }
+   
+   // window.onresize = myFunction;
+  
+
+
+
+
   const data = [
     { year: '2018', population: 18 },
     { year: '2019', population: 23 },
@@ -49,7 +59,8 @@ const HomePageContainer = (props) => {
         
         <section>
    <h3 className="welcome_text">
-      Welcome Admin
+      Welcome Admin 
+      {/* <p id="demo"></p> */}
    </h3>
    <Grid container className={classes.container} spacing={2}>
       <Box
@@ -332,14 +343,36 @@ const HomePageContainer = (props) => {
       </div>
    </div>
 </section>
+ {/* <section className="pai_chart">
+      <div className="container-fluid pc">
+        <div className="row">
+          <div className={width > 768 ? "col-md-6" : "col-md-12"} >
+            <div className="inner_pie_chart" >
+              <Piecahrtmain />
+            </div>
+          </div>
+          <div className={width > 768 ? "col-md-6" : "col-md-12"}>
+            <div className="inner_pie_chart" >
+              <BarChartOne />
+            </div>
+          </div>
+          <div className={width > 768 ? "col-md-6" : "col-md-12"}>
+            <div className="inner_pie_chart" >
+              <ClaimsInsuree />
+            </div>
+          </div>
+          <div className={width > 768 ? "col-md-6" : "col-md-12"}   >
+            <div  className="inner_pie_chart" >
+              <BarChartTwo />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> */}
 <style>
    {
    `
-   .pc svg{
-   border-radius: 8px !important;
-   box-shadow: 0px 1px 2px rgba(25,39,52,0.05),0px 0px 4px rgba(25,39,52,0.1);
-   margin-bottom: 10px;
-   }
+
    @media screen and (min-device-width: 1024px)
    and (max-device-width: 1400px) {
    body{
